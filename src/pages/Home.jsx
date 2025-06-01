@@ -29,7 +29,7 @@ export default function Home() {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo negro con transparencia
+            backgroundColor: 'rgba(0, 0, 0, 0.4)', // Capa oscura para mejorar la legibilidad del texto
             zIndex: 1,
           }}
         ></div>
@@ -39,7 +39,7 @@ export default function Home() {
             fontSize: '3rem',
             fontWeight: 'bold',
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-            zIndex: 2, // Asegura que el texto esté encima de la capa
+            zIndex: 2,
           }}
         >
           Bienvenid@ a Tejelanas 🧶
@@ -47,22 +47,38 @@ export default function Home() {
       </div>
 
       {/* Contenido principal */}
+      <div style={{ display: 'flex', alignItems: 'center', padding: '2rem', gap: '2rem' }}>
+        {/* Texto principal */}
+        <div style={{ flex: 1, textAlign: 'left' }}>
+          <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+            Descubre la magia de los productos hechos a mano, creados con amor en Chile. 
+            En Tejelanas, celebramos la tradición y la creatividad a través de piezas únicas y sostenibles.
+            <br /><br />
+            Cada uno de nuestros productos es confeccionado cuidadosamente por artesanas locales, quienes ponen dedicación y pasión en cada detalle. Nos inspira la naturaleza, los colores y las texturas de nuestra tierra, y buscamos transmitir esa esencia en cada creación.
+            <br /><br />
+            Además de ofrecer productos exclusivos, en Tejelanas fomentamos el aprendizaje y la comunidad. Organizamos talleres donde puedes aprender técnicas ancestrales como el telar y el crochet, ideales para quienes desean explorar su creatividad y conectar con la cultura textil chilena.
+            <br /><br />
+            Nuestro compromiso es con la calidad, la sostenibilidad y el comercio justo. Utilizamos fibras naturales y procesos responsables, apoyando a pequeñas productoras y promoviendo el consumo consciente.
+          </p>
+          <img
+            src="/made.png"
+            alt="Hecho en Chile"
+            style={{ width: '150px', marginBottom: '2rem' }}
+          />
+        </div>
+
+        {/* Imagen al lado derecho */}
+        <div style={{ flex: 1 }}>
+          <img
+            src="/lanas.jpg"
+            alt="Lanas"
+            style={{ width: '80%', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)' }}
+          />
+        </div>
+      </div>
+
+      {/* Sección de tarjeta y botones */}
       <div style={{ textAlign: 'center', padding: '2rem' }}>
-        <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
-          Descubre la magia de los productos hechos a mano, creados con amor en Chile. 
-          En Tejelanas, celebramos la tradición y la creatividad a través de piezas únicas y sostenibles.
-          <br /><br />
-          Cada uno de nuestros productos es confeccionado cuidadosamente por artesanas locales, quienes ponen dedicación y pasión en cada detalle. Nos inspira la naturaleza, los colores y las texturas de nuestra tierra, y buscamos transmitir esa esencia en cada creación.
-          <br /><br />
-          Además de ofrecer productos exclusivos, en Tejelanas fomentamos el aprendizaje y la comunidad. Organizamos talleres donde puedes aprender técnicas ancestrales como el telar y el crochet, ideales para quienes desean explorar su creatividad y conectar con la cultura textil chilena.
-          <br /><br />
-          Nuestro compromiso es con la calidad, la sostenibilidad y el comercio justo. Utilizamos fibras naturales y procesos responsables, apoyando a pequeñas productoras y promoviendo el consumo consciente.
-        </p>
-        <img
-          src="/made.png"
-          alt="Hecho en Chile"
-          style={{ width: '200px', marginBottom: '2rem' }}
-        />
         <Card
           style={{
             maxWidth: '600px',
