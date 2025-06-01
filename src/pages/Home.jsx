@@ -29,7 +29,7 @@ export default function Home() {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)', // Capa oscura para mejorar la legibilidad del texto
+            backgroundColor: 'rgba(0, 0, 0, 0.4)', // Fondo negro con transparencia
             zIndex: 1,
           }}
         ></div>
@@ -39,7 +39,7 @@ export default function Home() {
             fontSize: '3rem',
             fontWeight: 'bold',
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-            zIndex: 2,
+            zIndex: 2, // Asegura que el texto esté encima de la capa
           }}
         >
           Bienvenid@ a Tejelanas 🧶
@@ -47,9 +47,17 @@ export default function Home() {
       </div>
 
       {/* Contenido principal */}
-      <div style={{ display: 'flex', alignItems: 'center', padding: '2rem', gap: '2rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '2rem',
+          gap: '2rem',
+        }}
+      >
         {/* Texto principal */}
-        <div style={{ flex: 1, textAlign: 'left' }}>
+        <div style={{ flex: 1, textAlign: 'center' }}>
           <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
             Descubre la magia de los productos hechos a mano, creados con amor en Chile. 
             En Tejelanas, celebramos la tradición y la creatividad a través de piezas únicas y sostenibles.
@@ -67,14 +75,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Imagen al lado derecho */}
-        <div style={{ flex: 1 }}>
-          <img
-            src="/lanas.jpg"
-            alt="Lanas"
-            style={{ width: '80%', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)' }}
-          />
-        </div>
+  
       </div>
 
       {/* Sección de tarjeta y botones */}
@@ -114,6 +115,22 @@ export default function Home() {
           >
             Conoce Nuestros Talleres
           </Button>
+          
+                {/* Imagen al final */}
+        <div style={{ textAlign: 'center' }}>
+          <br />
+          <img
+            src="/lanas.jpg"
+            alt="Lanas"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              borderRadius: '20px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
+              marginBottom: '2rem',
+            }}
+          />
+        </div>
         </div>
       </div>
     </div>

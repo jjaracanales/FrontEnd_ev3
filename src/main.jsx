@@ -5,7 +5,7 @@ import 'antd/dist/reset.css';
 import './index.css';
 
 import MainLayout from './components/MainLayout';
-import Home from './pages/Home';
+import Home from './pages/home';
 import Productos from './pages/Productos';
 import Talleres from './pages/Talleres';
 import Faq from './pages/Faq';

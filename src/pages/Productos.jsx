@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Spin, Alert, Card, Button } from 'antd';
+import ProductCarousel from '../components/ProductCarousel';
 
 const { Meta } = Card;
 
@@ -45,33 +46,39 @@ function Productos() {
   if (error) return <Alert type="error" message={error} showIcon />;
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', padding: '2rem' }}>
-      {productos.length > 0 ? (
-        productos.map((producto) => (
-          <Card
-            key={producto.id}
-            hoverable
-            style={{ width: 300 }}
-            cover={
-              <img
-                alt={producto.nombre}
-                src={producto.imgs?.[0] || 'https://via.placeholder.com/300x200.png?text=Imagen+no+disponible'}
-                onError={(e) => {
-                  e.target.src = 'https://via.placeholder.com/300x200.png?text=Imagen+no+disponible';
-                }}
-              />
-            }
-          >
-            <Meta title={producto.nombre} description={`Precio: $${producto.precio}`} />
-            <p style={{ marginTop: '1rem' }}>{producto.descripcion}</p>
-            <Button type="primary" block onClick={() => handleContacto(producto)}>
-              Contactar
-            </Button>
-          </Card>
-        ))
-      ) : (
-        <Alert type="info" message="No hay productos disponibles" showIcon />
-      )}
+    <div>
+      {/* Carrusel de productos */}
+      {productos.length > 0 && <ProductCarousel productos={productos} />}
+
+      {/* Lista de productos */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', padding: '2rem' }}>
+        {productos.length > 0 ? (
+          productos.map((producto) => (
+            <Card
+              key={producto.id}
+              hoverable
+              style={{ width: 300 }}
+              cover={
+                <img
+                  alt={producto.nombre}
+                  src={producto.imgs?.[0] || 'https://via.placeholder.com/300x200.png?text=Imagen+no+disponible'}
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/300x200.png?text=Imagen+no+disponible';
+                  }}
+                />
+              }
+            >
+              <Meta title={producto.nombre} description={`Precio: $${producto.precio}`} />
+              <p style={{ marginTop: '1rem' }}>{producto.descripcion}</p>
+              <Button type="primary" block onClick={() => handleContacto(producto)}>
+                Contactar
+              </Button>
+            </Card>
+          ))
+        ) : (
+          <Alert type="info" message="No hay productos disponibles" showIcon />
+        )}
+      </div>
     </div>
   );
 }
